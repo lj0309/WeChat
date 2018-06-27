@@ -1,0 +1,6 @@
+/**index.wxss**/
+page{width: 100%;background:#fff;font-family: "微软雅黑";overflow-x: hidden}
+.container{padding:0;margin:0; text-align: center}
+image{width:100%;}
+swiper{width:100%; }
+.active{background:#61cdbd;border-radius: 3px 3px;color: #fff}

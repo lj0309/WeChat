@@ -1,0 +1,102 @@
+
+<view class="container" style="width:100%;overflow-x:hidden">
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+       bindscrolltolower="bindDownLoad" bindscroll="scroll">
+<!--图片轮播-->
+<image bindtap="tel" src="/image/banner1-1.jpg" bindload="imageLoad"  
+style="width:100%; height:{{100}}rpx;"></image>
+<swiper indicator-dots="true"
+  autoplay="true" interval="5000" bindload="imageLoad"  
+style="height:{{400}}rpx;" duration="1000">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" bindload="imageLoad"  
+style="width:{{imgwidth}}rpx; height:{{400}}rpx;"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--选项卡切换-->
+<view style="width:100%;background:#ededed;">
+<view style="width:96%;background:#ededed;margin-left:2%;margin-bottom:10px; height:36px; margin-top:10px;line-height:36px;font-size:14px; text-align:center">
+<text data-index="0" bindtap="nav" style="width:35%;float:left; height:36px;" class="{{navnum==0?'active':''}}">泰国试管流程</text>
+
+<text data-index="2" bindtap="nav" style="width:35%;float:left; height:36px;" class="{{navnum==2?'active':''}}">关于孕家</text>
+<text data-index="3" bindtap="nav" style="width:30%;float:left; height:36px;" class="{{navnum==3?'active':''}}">联系孕家</text>
+</view>
+</view>
+<!--内容切换-->
+<!--泰国试管流程(1)-->
+<view wx:if="{{navnum==0?true:false}}" style="padding-bottom:20px;width:100%">
+ 
+<view style="width:100%; height:10px; position:relative; line-height:40px; text-align:center;font-size:15px;">
+</view>
+<view style='width:90%;margin-left:5%;float:left'>
+<image src='/image/nav1.jpg' bindtap="scroll1" style='width:47.5%;margin-top:10px;float:left;height:112rpx'></image>
+<image src='/image/nav2.jpg' bindtap="scroll2" style='width:47.5%;margin-top:10px;float:left;margin-left:5%;height:112rpx'></image>
+<image src='/image/nav3.jpg' bindtap="scroll3" style='width:47.5%;margin-top:10px;float:left;height:112rpx'></image>
+<image src='/image/nav4.jpg' bindtap="scroll4" style='width:47.5%;margin-top:10px;float:left;margin-left:5%;height:112rpx'></image>
+</view>
+<image src="/image/A1-11.jpg" bindload="imageLoad"  
+style="width:100%; height:{{3855}}rpx;"></image>
+
+</view>
+
+
+<!--关于孕家(2)-->
+<view wx:if="{{navnum==2?true:false}}" style="padding-bottom:20px">
+<view style="width:100%; height:10px; position:relative; line-height:40px; text-align:center;font-size:15px;">
+</view>
+<image src="/image/A2-1.jpg" bindload="imageLoad"  
+style="width:{{imgwidth-30}}rpx; height:{{1350}}rpx;"></image>
+</view>
+
+
+<!--联系我们（4）-->
+<view wx:if="{{navnum==3?true:false}}" style="width:100%;font-size:13px; padding-bottom:56px;color:#ED3666;">
+<!--联系我们-->
+<view style="width:100%;background:#fff; height:300px;margin-top:10px;">
+<view style="width:100%; height:80px;float:left;position:relative;margin-top:10px;">
+<view style="width:80%;height:2px;background:#ededed;position:absolute;left:10%;top:30px;"></view>
+<view style="width:100px;text-align:center;background:#fff;height:30px;position:absolute;z-index:6;left:50%;margin-left:-50px;top:22px;font-size:15px;color:#828282">不忘初心</view>
+<view style="width:100%;top:70px;font-weight:bold;font-size:16px;position:absolute; color:#1a1a1a;text-align:center;">孕家国际医疗</view>
+</view>
+<!--电话号码-->
+<view style="width:100%; height:200px;float:left;margin-top:10px;background:#fff;;margin-top:10px;">
+<view style="width:44%; height:140px;float:left;text-align:center;position:relative;margin-left:4%;background:#fff;border:1px solid #dedede;margin-top:30px;" bindtap="tel2">
+<text style="width:100%;float:left;line-height:50px;font-size:12px;color:#828282">手机微信</text>
+<text style="width:100%;float:left;line-height:18px;font-size:12px;color:#828282">13510694071</text>
+<view style="width:100%;float:left;line-height:40px;font-size:12px;color:#828282;position:absolute;bottom:-6px;">
+<image src="/image/tel.png" style="width:40px; height:40px;"></image>
+</view>
+</view>
+<!--地址导航-->
+<view bindtap="address" style="width:44%; height:140px;float:left;margin-left:4%;position:relative;background:#fff;border:1px solid #dedede;margin-top:30px;">
+<text style="width:100%;float:left;line-height:50px;font-size:12px;color:#828282">地图导航</text>
+<text style="width:100%;float:left;line-height:16px;margin-top:-15px;font-size:12px;color:#828282">
+深圳市罗湖区南湖路国贸商住大厦
+</text>
+<view style="width:100%;float:left;line-height:40px;font-size:12px;color:#828282;position:absolute;bottom:-6px;">
+<image src="/image/address.png" style="width:40px; height:40px;"></image>
+</view>
+</view>
+</view>
+</view>
+</view>
+<!--底部浮层（5）-->
+<view style="width:100%; height:56px;background:#61cdbd;position:fixed;bottom:0;">
+
+<view bindtap="tel" style="width:50%;float:left;height:56px;text-align:left; position:relative">
+<image src="/image/iphone.png" style="width:32px;height:32px;top:3px;left:50%;margin-left:-16px;position:absolute"></image>
+<text style="height:46px; text-align:center;width:100%;line-height:46px;font-size:12px;color:#fff;position:absolute;top:18px;">免费电话：400-777-1660</text>
+</view>
+
+<button open-type="share" style="width:0;height:0;padding:0;margin:0;background:none;border-radius:0;width:50%;border-left:1px solid #fff;margin-left:-1px;float:left;height:56px;text-align:left; position:relative">
+<image src="/image/share.png" style="width:20px;height:20px;top:8px;left:50%;margin-left:-10px;position:absolute"></image>
+<text style="height:46px; text-align:center;width:100%;line-height:46px;font-size:12px;color:#fff;position:absolute;top:18px;">发送给朋友
+</text>
+</button >
+
+</view>
+</scroll-view>
+</view>
